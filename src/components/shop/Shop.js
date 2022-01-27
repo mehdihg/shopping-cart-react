@@ -1,4 +1,4 @@
-import React,{useContext, useEffect, useState} from 'react';
+import React,{useCallback, useContext, useEffect, useState} from 'react';
 import './Shop.css'
 import { Link } from 'react-router-dom';
 import { isInCart, itemsQuantity, shortClass, shorten } from '../../helpers/Helper';
@@ -13,16 +13,16 @@ const Shop = () => {
     const {state,dispatch}=useContext(reducerContextProvider)
     const [pageCounts,setPageCounts]=useState(0)
     const [activePage,setActivePage]=useState(1)
-    const calculatePage=()=>{
+    const calculatePage=useCallback(()=>{
       if(DateContextSplited.length % 9>0){
         return parseInt(DateContextSplited.length/9+1)
       }
       return parseInt(DateContextSplited.length/9)
 
-    }
+    },[DateContextSplited])
     useEffect(()=>{
       setPageCounts(calculatePage())
-    },[DataContext])
+    },[DataContext,calculatePage])
 
     const handlePage=(pageNum)=>{
       setActivePage(pageNum)
