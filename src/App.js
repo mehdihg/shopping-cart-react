@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+
+import "./App.css";
+import Checkout from "./components/checkout/Checkout";
+import DataContextProvider from "./components/datacontext/DataContextProvider";
+import Footer from "./components/footer/Footer";
+import HomePage from "./components/homepage/HomePage";
+import ProductDetails from "./components/productdetails/ProductDetails";
+import ReducerProducts from "./components/reducer/ReducerProducts";
+import ScrollToTop from "./components/scrollToTop/ScrollToTop";
+
+import Navbar from "./components/shared/Navbar";
+import Shop from "./components/shop/Shop";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DataContextProvider>
+      <ReducerProducts>
+        <Navbar />
+        <ScrollToTop />
+        <Switch>
+          <Route path="/product/:id" component={ProductDetails} />
+          <Route path="/shop" component={Shop} />
+          <Route path="/checkout" component={Checkout} />
+          <Route path="/" component={HomePage} />
+        </Switch>
+        <Footer />
+      </ReducerProducts>
+    </DataContextProvider>
   );
 }
 

@@ -1,7 +1,15 @@
+*{
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth !important;
+}
 .App {
   text-align: center;
+ 
 }
-
+button{
+  border-radius: 3px !important;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

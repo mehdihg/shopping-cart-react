@@ -1,0 +1,50 @@
+.shopContainer{
+    width: 85%;
+    min-height: 100vh;
+    margin: 140px auto 40px auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    box-shadow: 2px 4px 7px 3px #e3e3e3;
+}
+.productmain{
+    width: 25%;
+    text-align: center;
+    padding: 40px 20px 20px 20px;
+}
+.shopButtonSelected{
+    width: 16% !important;
+    padding: 10px 2px !important;
+    margin: 20px 25px !important;
+}
+@media screen and (max-width:480px) {
+    .productmain{
+        width: 100%;
+        padding: 20px 0 0 0;
+
+    }
+    .shopContainer{
+        margin: 40px auto 40px auto;
+    }
+}
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin-bottom: 40px;
+}
+.pagination li{
+
+    padding: 0 5px;
+}
+.pagination li button{
+
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+}
+.avtivePagination{
+    background-color: rgb(255 108 80);
+}

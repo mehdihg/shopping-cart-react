@@ -1,0 +1,10 @@
+.productslide {
+    padding: 20px 0;
+  margin: 80px 40px;
+  box-shadow: 2px 4px 7px 3px #e3e3e3;
+}
+.jeweltitle {
+  text-align: center;
+  margin: 40px 40px 20px 40px;
+  color: rgb(255 108 80);
+}
